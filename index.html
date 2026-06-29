@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sabina ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= LOADING SCREEN ================= -->
+<div id="loading-screen">
+    <div class="loader-heart">❤️</div>
+    <h2>Preparing Your Surprise...</h2>
+</div>
+
+<!-- ================= WELCOME SCREEN ================= -->
+<section id="welcome-screen" class="hidden">
+
+    <div class="welcome-card">
+
+        <h1>Happy Birthday Sabina ❤️</h1>
+
+        <p>
+            I made something magical just for you...
+        </p>
+
+        <button id="startBtn">Open My Heart 💖</button>
+
+    </div>
+
+</section>
+
+<!-- ================= MAIN SCENE ================= -->
+<section id="main-scene" class="hidden">
+
+    <!-- SKY BACKGROUND -->
+    <div id="sky">
+        <div id="moon"></div>
+        <div id="stars"></div>
+        <div id="clouds"></div>
+    </div>
+
+    <!-- TREE CANVAS -->
+    <canvas id="treeCanvas"></canvas>
+
+    <!-- EFFECT CONTAINERS -->
+    <div id="heart-container"></div>
+    <div id="firefly-container"></div>
+    <div id="petal-container"></div>
+
+    <!-- WISH BOX -->
+    <div id="wish-box">
+        <h1>Happy Birthday My Love ❤️</h1>
+        <div id="typing"></div>
+    </div>
+
+    <!-- PHOTO SECTION (IMPORTANT FIXED FOR MOBILE) -->
+    <div id="photo-tree">
+
+        <img src="image.png" alt="photo1" >
+        <img src="photo_2026-06-29_19-20-39.jpg" alt="photo2">
+        <img src="wef.jpg" alt="photo3">
+
+    </div>
+
+    <!-- QUOTE BOX -->
+    <div id="quote-box">
+        <p id="quote-text"></p>
+    </div>
+
+    <!-- FINAL MESSAGE -->
+    <div id="final-message" class="hidden">
+        <h1>❤️ I Love You Forever ❤️</h1>
+        <p>Thank you for being my happiness.</p>
+    </div>
+
+    <!-- MUSIC BUTTON -->
+    <button id="musicBtn">🎵 Music</button>
+
+    <!-- AUDIO -->
+    <audio id="bgMusic" loop>
+        <source src="Ah Canım Sevgilim (Demo) - Rei 6.mp3" type="audio/mp3">
+    </audio>
+
+</section>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="tree.js"></script>
+<script src="particles.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+/* ==========================
+   RESET + BASE
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background: linear-gradient(180deg, #070b1a, #1a1440, #ffb3c6);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==========================
+   LOADING SCREEN
+========================== */
+
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #2b0a3d, #000);
+    z-index: 9999;
+}
+
+.loader-heart {
+    font-size: 80px;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(0.9); }
+    75% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* ==========================
+   WELCOME SCREEN
+========================== */
+
+#welcome-screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background: rgba(0,0,0,0.5);
+}
+
+.welcome-card {
+    width: min(420px, 90vw);
+    padding: 30px;
+    text-align: center;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#welcome-screen h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#welcome-screen p {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+#startBtn {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(45deg, #ff4d8d, #ff85b3);
+    box-shadow: 0 0 20px hotpink;
+    transition: 0.3s;
+}
+
+#startBtn:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================
+   MAIN SCENE
+========================== */
+
+#main-scene {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+/* ==========================
+   SKY
+========================== */
+
+#sky {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+/* MOON */
+#moon {
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 40px white;
+    animation: glowMoon 4s infinite;
+}
+
+@keyframes glowMoon {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* STARS */
+#stars {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(white 1px, transparent 1px);
+    background-size: 200px 200px;
+    opacity: 0.6;
+}
+
+/* CLOUDS */
+#clouds {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.03);
+}
+
+/* ==========================
+   TREE CANVAS
+========================== */
+
+#treeCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* ==========================
+   EFFECTS CONTAINERS
+========================== */
+
+#heart-container,
+#firefly-container,
+#petal-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* ==========================
+   WISH BOX
+========================== */
+
+#wish-box {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92vw, 600px);
+    padding: 18px;
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.15);
+    z-index: 10;
+}
+
+#wish-box h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+#typing {
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+/* ==========================
+   PHOTO TREE
+========================== */
+
+#photo-tree {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 5;
+}
+
+#photo-tree img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+#photo-tree img:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================
+   FINAL MESSAGE
+========================== */
+
+#final-message {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    text-align: center;
+}
+
+/* ==========================
+   MUSIC BUTTON
+========================== */
+
+#musicBtn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4d8d;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 15px hotpink;
+    z-index: 20;
+}
+
+/* ==========================
+   MOBILE FIX (IMPORTANT)
+========================== */
+
+@media (max-width: 768px) {
+
+    #moon {
+        width: 60px;
+        height: 60px;
+        top: 20px;
+        right: 15px;
+    }
+
+    #photo-tree {
+        bottom: 80px;
+    }
+
+    #photo-tree img {
+        width: 70px;
+        height: 70px;
+    }
+
+    #wish-box {
+        top: 10px;
+        padding: 12px;
+    }
+
+    #typing {
+        font-size: 13px;
+    }
+
+    #musicBtn {
+        bottom: 15px;
+        right: 15px;
+        font-size: 13px;
+    }
+
+}
